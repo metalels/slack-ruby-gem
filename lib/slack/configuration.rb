@@ -36,7 +36,7 @@ module Slack
     DEFAULT_USER_AGENT = "Slack Ruby Gem #{Slack::VERSION}".freeze
 
     # Default openssl CA_PATH and CA_FILE path
-    DEFAULT_CA_PATH = %x[ openssl version -a | grep OPENSSLDIR | awk '{print $2}'|sed -e 's/\"//g' ]
+    DEFAULT_CA_PATH = %x[ openssl version -a | grep OPENSSLDIR | awk '{print $2}'|sed -e 's/\"//g' ] + "/certs"
     DEFAULT_CA_FILE = "#{DEFAULT_CA_PATH}/ca-certificates.crt"
 
     DEFAULT_MIDDLEWARES = []
